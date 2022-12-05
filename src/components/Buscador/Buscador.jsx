@@ -1,6 +1,9 @@
+
 const Buscador = () => {
+
     return (
-        <div>BUSCADOR</div>
+        <div>BUSCADOR: </div>
+        
     )
 
 

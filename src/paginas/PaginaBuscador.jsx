@@ -1,14 +1,20 @@
 
-import Buscador from '../components/Buscador';
+import Buscador from '../components/Buscador/Buscador';
+import Logo from '../components/Logo/Logo';
 
 const PaginaBuscador = () => {
     return ( 
-
-            <div><Buscador /></div>
-
+            <main>
+                <header>
+              <Logo/>
+            </header>
+              <Buscador />
+                
+            <footer>
+              <h3>Copyright</h3>
+            </footer>
+            </main>
     )
-
-
 };
 
 export default PaginaBuscador;

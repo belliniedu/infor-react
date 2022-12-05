@@ -1,23 +1,33 @@
 import './App.css';
-import Logo from './components/Logo';
 import PaginaBuscador from './paginas/PaginaBuscador';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route
+} from "react-router-dom";
+import Error404 from './components/Errores/404';
+import Noticia from './paginas/Noticia';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <PaginaBuscador/>,
+    errorElement: <Error404/>,
+  },
+  {
+    path: "/noticia",
+    element: <Noticia/>,
+  },
+]);
 
 function App() {
   return (
     <div className="App">
-            <header>
-              <Logo />
-            </header>
-            <body>
-              <PaginaBuscador />
-            </body>
-            <footer>
-              <h3>Copyright</h3>
-            </footer>
-  
-    </div>
-    
+    <RouterProvider router={router} />
+  </div>
   );
 }
 
 export default App;
+
