@@ -1,8 +1,8 @@
-
+import './Buscador.css'
 const Buscador = () => {
 
     return (
-        <div>BUSCADOR: </div>
+        <div className="buscador">BUSCADOR: </div>
         
     )
 

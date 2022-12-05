@@ -1,0 +1,11 @@
+.pagina-buscador {
+    text-align: center;
+    background-color: lightblue;
+    border: solid 1px;
+  }
+
+.pagina-buscador-logo {
+    text-align: left;
+    background-color: lightblue;
+    border: solid 1px;
+}
