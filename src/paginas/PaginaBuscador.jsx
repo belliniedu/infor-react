@@ -5,7 +5,7 @@ import Logo from '../components/Logo/Logo';
 import './PaginaBuscador.css'
 import Loading from "../components/Loading/Loading"; 
 import Paginador from "../components/Paginador/Paginador";
-import { ListaNoticias } from "./Noticia";
+import { ListaNoticias } from "../components/Noticias/Noticia";
 import { getBusquedaNoticias } from "../servicios/noticias";
 import { useSearchParams } from "react-router-dom";
 

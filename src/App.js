@@ -6,7 +6,7 @@ import {
   Route
 } from "react-router-dom";
 import Error404 from './components/Errores/404';
-import Noticia from './paginas/Noticia';
+import Noticia from './components/Noticias/Noticia';
 
 
 const router = createBrowserRouter([
