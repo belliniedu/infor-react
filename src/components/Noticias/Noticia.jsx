@@ -5,21 +5,21 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea  from '@mui/material/CardActionArea';
 import { DEFAULT_IMAGE, NA } from '../../libs/constantes';
-import { useNavigate } from 'react-router-dom';
+import Link from '@mui/material/Link';
 
 const Noticia = ({
     noticia
 
   }) => {
-
+      
       return (
           <Card sx={{ width: 600, marginBottom: 10 }}>
-          <CardActionArea >
+          <Link href={noticia.url} underline="none" target="_blank"><CardActionArea >
           <CardMedia
             component="img"
             height="140"
             width={250}
-            image={noticia.urlToImage  === 'N/A' ? DEFAULT_IMAGE : noticia.urlToImage}
+            image={noticia.urlToImage  === '' ? DEFAULT_IMAGE : noticia.urlToImage}
             alt={noticia.title}
           />
           <CardContent>
@@ -33,7 +33,7 @@ const Noticia = ({
               {noticia.publishedAt}
             </Typography>
           </CardContent>
-        </CardActionArea>
+        </CardActionArea></Link>
       </Card>
       )
   }

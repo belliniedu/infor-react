@@ -58,7 +58,7 @@ const PaginaBuscador = () => {
             </Container>
                 
             <footer >
-              <h3 className='pagina-buscador' >Copyright</h3>
+              <h3 className='pagina-buscador' >Copyright 2022</h3>
             </footer>
             </main>
     )
