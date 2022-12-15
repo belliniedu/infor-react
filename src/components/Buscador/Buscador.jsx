@@ -6,8 +6,9 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { useState } from "react";
 
-const Buscador = ({onBuscar}) => {
+const Buscador = ( { onBuscar } ) => {
     const [criterioBusqueda, setCriterioBusqueda] = useState('');
+
     return (
         <section className="buscador">
             
@@ -23,17 +24,17 @@ const Buscador = ({onBuscar}) => {
                         role="searchbox"
                         value={criterioBusqueda}
                         onChange={(e) => { 
-                          setCriterioBusqueda(e.target.value)
+                            setCriterioBusqueda(e.target.value)
                         }}/>
 
             </Box> 
             
             <Stack  display="flex" justifyContent="center" alignItems="center">
             <Button variant="outlined"   
-                    onClick={() => {
-                    if(criterioBusqueda)
-                    onBuscar(criterioBusqueda)}}
                     role="button"
+                    onClick={() => {
+                        onBuscar(criterioBusqueda)
+                    }}
                     >Buscar</Button>
             </Stack>
             

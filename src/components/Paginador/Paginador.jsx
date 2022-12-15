@@ -10,7 +10,7 @@ const Paginador = ({
     return (
     <Pagination 
         count={cantidadPaginas} 
-        color="secondary" 
+        color="primary" 
         onChange={cambiaPagina}
     />
     );

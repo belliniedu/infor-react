@@ -8,16 +8,13 @@ import { DEFAULT_IMAGE, NA } from '../../libs/constantes';
 import { useNavigate } from 'react-router-dom';
 
 const Noticia = ({
-    noticia,
-    onChange
+    noticia
+
   }) => {
-      const onCardClick = () => {
-        onChange && onChange(noticia);
-      };
-  
+
       return (
-          <Card sx={{ width: 250, marginBottom: 10 }}>
-          <CardActionArea onClick={onCardClick}>
+          <Card sx={{ width: 600, marginBottom: 10 }}>
+          <CardActionArea >
           <CardMedia
             component="img"
             height="140"
@@ -30,10 +27,10 @@ const Noticia = ({
               {noticia.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {noticia.urlToImage}
+              {noticia.description}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {noticia.author}
+              {noticia.publishedAt}
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -42,26 +39,10 @@ const Noticia = ({
   }
 
 
-export const ListaNoticias = ({ noticias }) => {
-    const navigate = useNavigate();
-    const onNoticiaClick = ({ imdbID }) => {
-      navigate(`/noticias/${imdbID}`);
-    }  
-    return (
-    <section style={{
-      display: 'flex',
-      flexwrap: 'wrap',
-      felxDirection: 'row',
-      justifyContent: 'scape-around',
-      marginTop: '20px',
-    }}>
-      {
-      noticias.map((noticia) => {
-          return <Noticia noticia={noticia} onChange={onNoticiaClick}/>
-      })
-      }
-    </section>
-    )
+export const ListaNoticias = ({noticias}) => {
+    return noticias.map((noticia) => {
+      return <Noticia noticia={noticia}/>
+    })
   }
 
 export default Noticia;

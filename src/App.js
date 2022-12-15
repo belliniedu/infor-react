@@ -1,5 +1,6 @@
 import './App.css';
 import PaginaBuscador from './paginas/PaginaBuscador';
+import PaginaDetalle from './paginas/PaginaDetalle';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/noticia",
     element: <Noticia/>,
+  },
+  {
+    path: "/noticias/:id",
+    element: <PaginaDetalle />,
   },
 ]);
 
