@@ -1,2 +1,2 @@
-export const DEFAULT_IMAGE = '.images/novaya.jpg';
+export const DEFAULT_IMAGE = '.images/default.png';
 export const NA = 'N/A';

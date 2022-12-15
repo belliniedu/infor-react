@@ -30,7 +30,7 @@ const Buscador = ( { onBuscar } ) => {
             </Box> 
             
             <Stack  display="flex" justifyContent="center" alignItems="center">
-            <Button variant="outlined"   
+            <Button disabled={!(criterioBusqueda.length>2)} variant="outlined"   
                     role="button"
                     onClick={() => {
                         onBuscar(criterioBusqueda)
