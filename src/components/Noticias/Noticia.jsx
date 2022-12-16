@@ -6,12 +6,14 @@ import Typography from '@mui/material/Typography';
 import CardActionArea  from '@mui/material/CardActionArea';
 import { DEFAULT_IMAGE} from '../../libs/constantes';
 import Link from '@mui/material/Link';
+import { DateTime } from 'luxon';
+
 
 const Noticia = ({
     noticia
 
   }) => {
-      
+
       return (
           <Card sx={{ width: 600, marginBottom: 10 }}>
           <Link href={noticia.url} underline="none" target="_blank"><CardActionArea >
