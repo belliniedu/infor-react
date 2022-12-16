@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import Resultados from '../components/Resultados/Resultados';
+import SinResultados from '../components/Errores/SinResultados';
 
 const PaginaBuscador = () => {
   const [noticias, setNoticias] = useState();
@@ -18,6 +19,8 @@ const PaginaBuscador = () => {
   const [pagina, setPagina] = useState(1);
   const [searchParams, setSearchParams]= useSearchParams();
   const [resultados, setResultados]=useState();
+  const [isResult, setIsResult]=useState(false);
+
   useEffect(() => {
     if (searchParams.get('query')) {
         buscarNoticia(pagina)
@@ -36,11 +39,17 @@ const PaginaBuscador = () => {
       setResultados(100);
     };
     setIsLoading(false);
+    if ((parseInt(totalResults)/10)===0) {
+      setIsResult(true)
+    } else {
+      setIsResult(false)
+    }
     return resultados;
   }
 
   const onBuscar = (criterioBusqueda) => {
     setSearchParams({query: criterioBusqueda});
+    onCambioPagina(1);
   };
 
   const onCambioPagina = (pagina) => {
@@ -56,9 +65,10 @@ const PaginaBuscador = () => {
             <Container maxWidth='sm'>
             <Buscador onBuscar={onBuscar}/>
             {isLoading && <Loading />}
-            {noticias && <Resultados totalResults={resultados}/>}
+            {!isResult && noticias && <Resultados totalResults={resultados}/>}
             {noticias && <ListaNoticias noticias={noticias}/>}
-            {noticias && <Paginador cantidadPaginas={cantidadPaginas} onChange={onCambioPagina}/>}
+            {isResult && <SinResultados />}
+            {!isResult && noticias && <Paginador cantidadPaginas={cantidadPaginas} onChange={onCambioPagina}/>}
             </Container>
                 
             <footer >
