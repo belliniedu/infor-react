@@ -13,7 +13,7 @@ const Noticia = ({
     noticia
 
   }) => {
-
+        const fecha = DateTime.fromISO(noticia.publishedAt.toString());
       return (
           <Card sx={{ width: 600, marginBottom: 10 }}>
           <Link href={noticia.url} underline="none" target="_blank"><CardActionArea >
@@ -32,7 +32,7 @@ const Noticia = ({
               {noticia.description}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {noticia.publishedAt}
+              Publicado el: {fecha.toFormat('dd-mm-yyyy')} a las {fecha.toFormat('hh:yy')} hs
             </Typography>
           </CardContent>
         </CardActionArea></Link>
