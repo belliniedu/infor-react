@@ -7,7 +7,7 @@ import CardActionArea  from '@mui/material/CardActionArea';
 import { DEFAULT_IMAGE} from '../../libs/constantes';
 import Link from '@mui/material/Link';
 import { DateTime } from 'luxon';
-
+import './Noticia.css'
 
 const Noticia = ({
     noticia
@@ -15,12 +15,13 @@ const Noticia = ({
   }) => {
         const fecha = DateTime.fromISO(noticia.publishedAt.toString());
       return (
-          <Card sx={{ width: 600, marginBottom: 10 }}>
+          <Card sx={{ width: 700, marginBottom: 5 }}>
           <Link href={noticia.url} underline="none" target="_blank"><CardActionArea >
           <CardMedia
             component="img"
             height="140"
             width={250}
+            sx={{ width: 100, heigth: 30, float: 'right'}}
             image={noticia.urlToImage  === '' ? DEFAULT_IMAGE : noticia.urlToImage}
             alt={noticia.title}
           />
@@ -43,7 +44,8 @@ const Noticia = ({
 
 export const ListaNoticias = ({noticias}) => {
     return noticias.map((noticia) => {
-      return <Noticia noticia={noticia}/>
+      return <article className="noticia"><Noticia noticia={noticia}/>
+              </article>
     })
   }
 

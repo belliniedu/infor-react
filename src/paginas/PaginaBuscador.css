@@ -2,10 +2,20 @@
     text-align: center;
     background-color: lightblue;
     border: solid 1px;
+    border-top: 0px;
+    
   }
 
 .pagina-buscador-logo {
     text-align: left;
     background-color: lightblue;
     border: solid 1px;
+}
+
+.pagina-buscador-lista {
+  text-align: left;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

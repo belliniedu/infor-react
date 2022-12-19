@@ -62,15 +62,18 @@ const PaginaBuscador = () => {
                 <header className='pagina-buscador-logo'>
               <Logo/>
             </header>
+            <main className="pagina-buscador-main">
             <Container maxWidth='sm'>
             <Buscador onBuscar={onBuscar}/>
             {isLoading && <Loading />}
             {!isResult && noticias && <Resultados totalResults={resultados}/>}
+            <section className="pagina-buscador-lista">
             {noticias && <ListaNoticias noticias={noticias}/>}
             {isResult && <SinResultados />}
             {!isResult && noticias && <Paginador cantidadPaginas={cantidadPaginas} onChange={onCambioPagina}/>}
+            </section>
             </Container>
-                
+            </main> 
             <footer >
               <h3 className='pagina-buscador' >Copyright 2022</h3>
             </footer>

@@ -4,4 +4,8 @@
     background-color: lightblue;
     align-items: left;
     margin-block-end: 6px;
+    font-size: 13px;
+    font-weight: 400;
+    justify-content: left;
+
   }
