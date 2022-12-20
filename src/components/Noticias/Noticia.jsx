@@ -8,8 +8,7 @@ import { DEFAULT_IMAGE} from '../../libs/constantes';
 import Link from '@mui/material/Link';
 import { DateTime } from 'luxon';
 import './Noticia.css'
-import { red } from '@mui/material/colors';
-import { maxHeight } from '@mui/system';
+
 
 const Noticia = ({
     noticia
@@ -17,7 +16,7 @@ const Noticia = ({
   }) => {
         const fecha = DateTime.fromISO(noticia.publishedAt.toString());
       return (
-          <Card sx={{ marginBottom: 5, width: 900, height: 180 , background: 'grey'}} >
+          <Card sx={{ marginBottom: 5, width: 900, height: 180 , background: '#202124'}} >
           <Link href={noticia.url} underline="none" target="_blank"><CardActionArea >
           <CardMedia
             component="img"
@@ -41,14 +40,13 @@ const Noticia = ({
           <CardContent sx={{
              width: 750, 
              Height: 180,
-             background: 'grey',
              justifyContent:'space-around'
           }}>
             <Typography gutterBottom variant="h5" component="div"
             sx={{fontSize: 22,
               overflow:'hidden',
               height:26,
-              color:'#125696',
+              color:'#5884CA',
             }}
             >
               {noticia.title}
@@ -57,6 +55,7 @@ const Noticia = ({
               sx={{ height:76,
                 marginBottom:2,
                 marginTop:2,
+                color:'whitesmoke',
                }}>
               {noticia.description}
               
@@ -66,6 +65,7 @@ const Noticia = ({
                 marginBottom:2,
                 marginTop:2,
                 position:'relative',
+                color:'#656966',
                 }}
             >
               Publicado el: {fecha.toFormat('dd-mm-yyyy')} a las {fecha.toFormat('hh:yy')} hs
