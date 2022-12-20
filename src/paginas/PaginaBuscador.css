@@ -3,6 +3,9 @@
     background-color: lightblue;
     border: solid 1px;
     border-top: 0px;
+    border-bottom: 0px;
+    padding-top: 20px;
+    margin-bottom: 10px;
     
   }
 
@@ -17,5 +20,18 @@
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-around; 
+  background-color: lightblue;
 }
+
+.pagina-buscador-footer {
+  text-align: center;
+  background-color: lightblue;
+  border: solid 1px;
+  height: 40px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+
+
+}
+

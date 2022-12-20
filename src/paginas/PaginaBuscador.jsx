@@ -11,6 +11,7 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import Resultados from '../components/Resultados/Resultados';
 import SinResultados from '../components/Errores/SinResultados';
+import Vacio from "../components/Vacio/Vacio";
 
 const PaginaBuscador = () => {
   const [noticias, setNoticias] = useState();
@@ -62,20 +63,26 @@ const PaginaBuscador = () => {
                 <header className='pagina-buscador-logo'>
               <Logo/>
             </header>
-            <main className="pagina-buscador-main">
-            <Container maxWidth='sm'>
+            <body className="pagina-buscador">
+            <Container >
             <Buscador onBuscar={onBuscar}/>
             {isLoading && <Loading />}
+           
             {!isResult && noticias && <Resultados totalResults={resultados}/>}
+           
             <section className="pagina-buscador-lista">
-            {noticias && <ListaNoticias noticias={noticias}/>}
+            {noticias && <ListaNoticias maxWidth='lg' noticias={noticias}/>}
             {isResult && <SinResultados />}
-            {!isResult && noticias && <Paginador cantidadPaginas={cantidadPaginas} onChange={onCambioPagina}/>}
             </section>
+           
+            {!isResult && noticias && <Paginador cantidadPaginas={cantidadPaginas} onChange={onCambioPagina} />}
+           
             </Container>
-            </main> 
-            <footer >
-              <h3 className='pagina-buscador' >Copyright 2022</h3>
+            {!isResult && !noticias && <Vacio/>}
+            </body>
+            
+            <footer className='pagina-buscador-footer'>
+              <h4>Copyright 2022</h4>
             </footer>
             </main>
     )

@@ -8,11 +8,15 @@ const Paginador = ({
         onChange(pagina);
     };
     return (
+
     <Pagination 
         count={cantidadPaginas} 
         color="primary" 
         onChange={cambiaPagina}
+        sx={{display: 'flex',
+            justifyContent: 'center' }}
     />
+
     );
 }
 

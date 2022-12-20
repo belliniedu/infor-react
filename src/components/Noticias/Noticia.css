@@ -4,4 +4,14 @@
     background-color: red;
     align-items: left;
     margin-block-end: 6px;
+
+  }
+
+  .texto {
+
+    text-align: left;
+    align-items: left;
+    width: 500;
+    height: 300;
+    background-color: red;
   }

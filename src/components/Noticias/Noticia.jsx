@@ -8,6 +8,8 @@ import { DEFAULT_IMAGE} from '../../libs/constantes';
 import Link from '@mui/material/Link';
 import { DateTime } from 'luxon';
 import './Noticia.css'
+import { red } from '@mui/material/colors';
+import { maxHeight } from '@mui/system';
 
 const Noticia = ({
     noticia
@@ -15,24 +17,57 @@ const Noticia = ({
   }) => {
         const fecha = DateTime.fromISO(noticia.publishedAt.toString());
       return (
-          <Card sx={{ width: 700, marginBottom: 5 }}>
+          <Card sx={{ marginBottom: 5, width: 900, height: 180 , background: 'grey'}} >
           <Link href={noticia.url} underline="none" target="_blank"><CardActionArea >
           <CardMedia
             component="img"
             height="140"
             width={250}
-            sx={{ width: 100, heigth: 30, float: 'right'}}
+            sx={{ 
+              width: 150, 
+              heigth: 100, 
+              float: 'right',
+              marginLeft:2,
+              marginRight:2,
+              marginTop:2,
+              marginBottom:2,
+              position:'relative',
+              borderRadius:2,
+              
+            }}
             image={noticia.urlToImage  === '' ? DEFAULT_IMAGE : noticia.urlToImage}
             alt={noticia.title}
           />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+          <CardContent sx={{
+             width: 750, 
+             Height: 180,
+             background: 'grey',
+             justifyContent:'space-around'
+          }}>
+            <Typography gutterBottom variant="h5" component="div"
+            sx={{fontSize: 22,
+              overflow:'hidden',
+              height:26,
+              color:'#125696',
+            }}
+            >
               {noticia.title}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="text.secondary"
+              sx={{ height:76,
+                marginBottom:2,
+                marginTop:2,
+               }}>
               {noticia.description}
+              
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="text.secondary"
+              sx={{
+                marginBottom:2,
+                marginTop:2,
+                position:'relative',
+                }}
+            >
               Publicado el: {fecha.toFormat('dd-mm-yyyy')} a las {fecha.toFormat('hh:yy')} hs
             </Typography>
           </CardContent>
@@ -44,8 +79,8 @@ const Noticia = ({
 
 export const ListaNoticias = ({noticias}) => {
     return noticias.map((noticia) => {
-      return <article className="noticia"><Noticia noticia={noticia}/>
-              </article>
+      return <Noticia noticia={noticia}/>
+
     })
   }
 
