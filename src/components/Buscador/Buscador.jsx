@@ -25,16 +25,26 @@ const Buscador = ( { onBuscar } ) => {
                         value={criterioBusqueda}
                         onChange={(e) => { 
                             setCriterioBusqueda(e.target.value)
-                        }}/>
+                        }}
+                        onKeyPress={
+                            (ev) => {
+                            if (ev.key === 'Enter' && (criterioBusqueda.length>2)) {
+                                ev.preventDefault();
+                                onBuscar(criterioBusqueda); 
+                                ev.preventDefault();
+                            }}
+                        }
+                        />
 
             </Box> 
             
-            <Stack  display="flex" justifyContent="center" alignItems="center">
+            <Stack  display="flex" justifyContent="center" alignItems="center" sx={{paddingTop:1}}>
             <Button disabled={!(criterioBusqueda.length>2)} variant="outlined"   
                     role="button"
                     onClick={() => {
                         onBuscar(criterioBusqueda)
                     }}
+
                     >Buscar</Button>
             </Stack>
             

@@ -4,15 +4,12 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea  from '@mui/material/CardActionArea';
-import { DEFAULT_IMAGE} from '../../libs/constantes';
 import Link from '@mui/material/Link';
 import { DateTime } from 'luxon';
 import './Noticia.css'
 
-
 const Noticia = ({
     noticia
-
   }) => {
         const fecha = DateTime.fromISO(noticia.publishedAt.toString());
       return (
@@ -34,7 +31,7 @@ const Noticia = ({
               borderRadius:2,
               
             }}
-            image={noticia.urlToImage  === '' ? DEFAULT_IMAGE : noticia.urlToImage}
+            image={noticia.urlToImage}
             alt={noticia.title}
           />
           <CardContent sx={{

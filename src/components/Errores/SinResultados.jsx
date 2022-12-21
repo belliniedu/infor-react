@@ -1,7 +1,8 @@
 import './errores.css'
+
 const SinResultados = () => {
     return (
-        <h3 className="errores"> No se encontraron resultados, intente de otra forma. </h3>
+        <div className="errores"> No se encontraron resultados, intente de otra forma. </div>
     )
 
 

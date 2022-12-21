@@ -1,5 +1,8 @@
 .errores {
-height: 346px;
+height: 288px;
+padding-top: 100px;
+font-size: large;
+color: #1976D2;
 }
 
 .error-404 {

@@ -2,8 +2,7 @@ import './App.css';
 import PaginaBuscador from './paginas/PaginaBuscador';
 import {
   createBrowserRouter,
-  RouterProvider,
-  Route
+  RouterProvider
 } from "react-router-dom";
 import Error404 from './components/Errores/404';
 

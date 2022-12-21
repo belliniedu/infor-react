@@ -59,30 +59,25 @@ const PaginaBuscador = () => {
 
 
     return ( 
-            <main >
+            <main>
                 <header className='pagina-buscador-logo'>
-              <Logo/>
-            </header>
+                  <Logo/>
+                </header>
             <body className="pagina-buscador">
-            <Container >
-            <Buscador onBuscar={onBuscar}/>
-            {isLoading && <Loading />}
-           
-            {!isResult && noticias && <Resultados totalResults={resultados}/>}
-           
-            <section className="pagina-buscador-lista">
-            {noticias && <ListaNoticias maxWidth='lg' noticias={noticias}/>}
-            {isResult && <SinResultados />}
-            </section>
-           
-            {!isResult && noticias && <Paginador cantidadPaginas={cantidadPaginas} onChange={onCambioPagina} />}
-           
-            </Container>
-            {!isResult && !noticias && <Vacio/>}
+              <Container >
+                <Buscador onBuscar={onBuscar}/>
+                {isLoading && <Loading />}
+                {!isResult && noticias && <Resultados totalResults={resultados}/>}
+                <section className="pagina-buscador-lista">
+                  {noticias && <ListaNoticias maxWidth='lg' noticias={noticias}/>}
+                  {isResult && <SinResultados />}
+                </section>
+                {!isResult && noticias && <Paginador cantidadPaginas={cantidadPaginas} onChange={onCambioPagina} />}
+              </Container>
+              {!isResult && !noticias && <Vacio/>}
             </body>
-            
             <footer className='pagina-buscador-footer'>
-              <h4>Copyright 2022</h4>
+              <div>Copyright 2022</div>
             </footer>
             </main>
     )

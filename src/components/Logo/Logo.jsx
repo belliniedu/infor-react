@@ -1,7 +1,7 @@
 
 const Logo = () => {
     return (
-        <h2>LOGO</h2>
+        <h3>Logo</h3>
     )
 
 
